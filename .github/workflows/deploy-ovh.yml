@@ -17,6 +17,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          security: loose
+          local-dir: ESIG-main/
           server-dir: /www/wp-content/themes/esig/
           dangerous-clean-slate: false
           exclude: |
@@ -25,3 +29,5 @@ jobs:
             **/README*
             **/node_modules/**
             **/*.zip
+
+
