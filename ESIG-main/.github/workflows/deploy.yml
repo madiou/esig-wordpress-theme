@@ -2,7 +2,7 @@ name: Deploy ESIG Theme to OVH
 
 on:
   push:
-    branches: [ "main" ]   # ou "master" si ton repo utilise master
+    branches: ["main"]   # si ton repo utilise "master", remplace par "master"
 
 jobs:
   deploy:
@@ -11,8 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Déploie tout le repo vers le dossier du thème sur OVH
-      - name: FTP Deploy to OVH
+      - name: Deploy via FTP to OVH
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -25,3 +24,4 @@ jobs:
             **/.github/**
             **/README*
             **/node_modules/**
+            **/*.zip
