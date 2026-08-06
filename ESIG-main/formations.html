@@ -15,86 +15,361 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Formations</span>
+            </nav>
             <h1 class="page-header__title">Nos Formations</h1>
+            <p class="page-header__subtitle">Des parcours d'excellence pour construire votre avenir professionnel</p>
         </div>
     </section>
 
-    <!-- Formations Intro -->
+    <!-- Formations Overview -->
     <section class="section">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Nos filières</span>
+                <h2 class="section__title">3 filières, 1 ambition : votre réussite</h2>
                 <p class="section__subtitle">Découvrez nos formations en informatique, gestion et double compétence pour construire votre avenir professionnel.</p>
-                <div class="section__line"></div>
             </div>
-            
-            <!-- Tabs Circulaires -->
-            <div class="formations-circles">
-                <div class="formation-circle-block">
-                    <div class="formation-circle">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="formation-circle__title">Informatique de Gestion</h3>
-                    <p class="formation-circle__text">Maîtrisez les technologies du numérique et devenez un expert en développement, réseaux et systèmes d'information.</p>
+
+            <!-- Filières Cards -->
+            <div class="filieres-grid">
+                <div class="filiere-card" onclick="showTab('info-gestion')">
+                    <div class="filiere-card__icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="filiere-card__title">Informatique de Gestion</h3>
+                    <p class="filiere-card__text">Maîtrisez les technologies du numérique et devenez un expert en systèmes d'information.</p>
+                    <span class="filiere-card__link">Voir le programme <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div class="formation-circle-block">
-                    <div class="formation-circle">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="formation-circle__title">Développement et Base de Données</h3>
-                    <p class="formation-circle__text">Acquérez les compétences en management, finance et comptabilité pour piloter les entreprises de demain.</p>
+                <div class="filiere-card" onclick="showTab('dev-bdd')">
+                    <div class="filiere-card__icon"><i class="fas fa-database"></i></div>
+                    <h3 class="filiere-card__title">Développement & Bases de Données</h3>
+                    <p class="filiere-card__text">Conception d'applications web, mobiles et gestion de bases de données à grande échelle.</p>
+                    <span class="filiere-card__link">Voir le programme <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div class="formation-circle-block">
-                    <div class="formation-circle">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="formation-circle__title">Comptabilité & Gestion </h3>
-                    <p class="formation-circle__text">Combinez informatique et gestion pour un profil polyvalent très recherché sur le marché du travail.</p>
+                <div class="filiere-card" onclick="showTab('compta-gestion')">
+                    <div class="filiere-card__icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="filiere-card__title">Comptabilité & Gestion</h3>
+                    <p class="filiere-card__text">Finance, comptabilité et pilotage des organisations pour les leaders de demain.</p>
+                    <span class="filiere-card__link">Voir le programme <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
-        <div class="section__line"></div>
     </section>
 
-    <!-- Formations Section -->
-    <section class="formations-section">
+    <!-- Programmes Détaillés -->
+    <section class="section programmes-section">
         <div class="container">
-            <div class="formations-two-cols">
-                <!-- Bloc 1: Organisation et Admission -->
-                <div class="formations-info-block">
-                    <h3 class="formations-info__title">Organisation pédagogique</h3>
-                    <p class="formations-info__text">Notre programme est structuré en semestres avec des cours théoriques, des travaux pratiques et des stages en entreprise. Chaque semestre comprend des évaluations continues et des examens finaux pour valider les compétences acquises.</p>
-                    
-                    <h3 class="formations-info__title">Modalité d'admission</h3>
-                    <ul class="formations-info__list">
-                        <li>Dossier de candidature complet (relevés de notes, diplômes, CV)</li>
-                        <li>Test d'évaluation des connaissances générales</li>
-                        <li>Entretien de motivation avec le jury d'admission</li>
-                    </ul>
+            <div class="section__header">
+                <span class="section__tag">Programmes</span>
+                <h2 class="section__title">Programmes détaillés</h2>
+            </div>
+
+            <!-- Tabs -->
+            <div class="programme-tabs">
+                <button class="programme-tab active" data-tab="info-gestion">
+                    <i class="fas fa-laptop-code"></i> Informatique de Gestion
+                </button>
+                <button class="programme-tab" data-tab="dev-bdd">
+                    <i class="fas fa-database"></i> Développement & BDD
+                </button>
+                <button class="programme-tab" data-tab="compta-gestion">
+                    <i class="fas fa-chart-bar"></i> Comptabilité & Gestion
+                </button>
+            </div>
+
+            <!-- Tab: Informatique de Gestion -->
+            <div class="programme-content active" id="tab-info-gestion">
+                <div class="programme-header">
+                    <div class="programme-header__info">
+                        <h3>Informatique de Gestion</h3>
+                        <p>Former des spécialistes capables d'analyser, concevoir et gérer les systèmes d'information d'entreprise.</p>
+                        <div class="programme-badges">
+                            <span class="badge badge--blue"><i class="fas fa-clock"></i> 3 ans (Licence)</span>
+                            <span class="badge badge--gold"><i class="fas fa-certificate"></i> Diplôme reconnu</span>
+                            <span class="badge badge--green"><i class="fas fa-briefcase"></i> Stages inclus</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Bloc 2: Tableau Semestre -->
-                <div class="formations-table-block">
-                    <table class="semestre-table">
-                        <thead>
-                            <tr>
-                                <th>Semestre 1</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Introduction à l'informatique</td>
-                            </tr>
-                            <tr>
-                                <td>Algorithmique et programmation</td>
-                            </tr>
-                            <tr>
-                                <td>Mathématiques appliquées</td>
-                            </tr>
-                            <tr>
-                                <td>Communication professionnelle</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="semestres-grid">
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 1</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Introduction à l'informatique</li>
+                            <li><i class="fas fa-check"></i> Algorithmique et programmation</li>
+                            <li><i class="fas fa-check"></i> Mathématiques appliquées</li>
+                            <li><i class="fas fa-check"></i> Communication professionnelle</li>
+                            <li><i class="fas fa-check"></i> Introduction à la gestion</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 2</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Programmation orientée objet</li>
+                            <li><i class="fas fa-check"></i> Bases de données relationnelles</li>
+                            <li><i class="fas fa-check"></i> Réseaux informatiques</li>
+                            <li><i class="fas fa-check"></i> Comptabilité générale</li>
+                            <li><i class="fas fa-check"></i> Anglais professionnel</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 3</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Développement web (HTML/CSS/JS)</li>
+                            <li><i class="fas fa-check"></i> Administration des bases de données</li>
+                            <li><i class="fas fa-check"></i> Systèmes d'exploitation</li>
+                            <li><i class="fas fa-check"></i> Gestion de projet</li>
+                            <li><i class="fas fa-check"></i> Droit des affaires</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 4</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Développement web avancé</li>
+                            <li><i class="fas fa-check"></i> Sécurité informatique</li>
+                            <li><i class="fas fa-check"></i> Systèmes d'information</li>
+                            <li><i class="fas fa-check"></i> Management des organisations</li>
+                            <li><i class="fas fa-check"></i> Stage professionnel</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 5</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Architecture des systèmes</li>
+                            <li><i class="fas fa-check"></i> Cloud computing</li>
+                            <li><i class="fas fa-check"></i> ERP et logiciels de gestion</li>
+                            <li><i class="fas fa-check"></i> Audit informatique</li>
+                            <li><i class="fas fa-check"></i> Entrepreneuriat</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 6</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Projet de fin d'études</li>
+                            <li><i class="fas fa-check"></i> Stage long (4 mois)</li>
+                            <li><i class="fas fa-check"></i> Intelligence artificielle - intro</li>
+                            <li><i class="fas fa-check"></i> Mémoire professionnel</li>
+                            <li><i class="fas fa-check"></i> Préparation à l'emploi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Développement & BDD -->
+            <div class="programme-content" id="tab-dev-bdd">
+                <div class="programme-header">
+                    <div class="programme-header__info">
+                        <h3>Développement & Bases de Données</h3>
+                        <p>Former des développeurs full-stack et experts en bases de données pour répondre aux besoins du marché.</p>
+                        <div class="programme-badges">
+                            <span class="badge badge--blue"><i class="fas fa-clock"></i> 3 ans (Licence)</span>
+                            <span class="badge badge--gold"><i class="fas fa-certificate"></i> Diplôme reconnu</span>
+                            <span class="badge badge--green"><i class="fas fa-briefcase"></i> Stages inclus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestres-grid">
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 1</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Fondamentaux de la programmation</li>
+                            <li><i class="fas fa-check"></i> HTML / CSS / JavaScript</li>
+                            <li><i class="fas fa-check"></i> Mathématiques pour l'informatique</li>
+                            <li><i class="fas fa-check"></i> Logique et algorithmique</li>
+                            <li><i class="fas fa-check"></i> Communication écrite</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 2</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Programmation Python</li>
+                            <li><i class="fas fa-check"></i> SQL et bases de données</li>
+                            <li><i class="fas fa-check"></i> Programmation Java</li>
+                            <li><i class="fas fa-check"></i> Systèmes d'exploitation Linux</li>
+                            <li><i class="fas fa-check"></i> Anglais technique</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 3</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Développement backend (Node.js/PHP)</li>
+                            <li><i class="fas fa-check"></i> Bases de données NoSQL</li>
+                            <li><i class="fas fa-check"></i> Frameworks front-end (React/Vue)</li>
+                            <li><i class="fas fa-check"></i> Méthodes Agile/Scrum</li>
+                            <li><i class="fas fa-check"></i> UX/UI Design</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 4</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Développement mobile (Android/iOS)</li>
+                            <li><i class="fas fa-check"></i> Administration BDD avancée</li>
+                            <li><i class="fas fa-check"></i> APIs REST & GraphQL</li>
+                            <li><i class="fas fa-check"></i> Tests logiciels</li>
+                            <li><i class="fas fa-check"></i> Stage professionnel</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 5</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> DevOps et CI/CD</li>
+                            <li><i class="fas fa-check"></i> Cloud (AWS/Azure/GCP)</li>
+                            <li><i class="fas fa-check"></i> Big Data</li>
+                            <li><i class="fas fa-check"></i> Sécurité applicative</li>
+                            <li><i class="fas fa-check"></i> Gestion de projet IT</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 6</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Projet de fin d'études</li>
+                            <li><i class="fas fa-check"></i> Stage long (4 mois)</li>
+                            <li><i class="fas fa-check"></i> Intelligence artificielle appliquée</li>
+                            <li><i class="fas fa-check"></i> Mémoire professionnel</li>
+                            <li><i class="fas fa-check"></i> Préparation à l'emploi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Comptabilité & Gestion -->
+            <div class="programme-content" id="tab-compta-gestion">
+                <div class="programme-header">
+                    <div class="programme-header__info">
+                        <h3>Comptabilité & Gestion</h3>
+                        <p>Former des gestionnaires et comptables capables de piloter les finances et les organisations modernes.</p>
+                        <div class="programme-badges">
+                            <span class="badge badge--blue"><i class="fas fa-clock"></i> 3 ans (Licence)</span>
+                            <span class="badge badge--gold"><i class="fas fa-certificate"></i> Diplôme reconnu</span>
+                            <span class="badge badge--green"><i class="fas fa-briefcase"></i> Stages inclus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="semestres-grid">
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 1</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Comptabilité générale I</li>
+                            <li><i class="fas fa-check"></i> Économie générale</li>
+                            <li><i class="fas fa-check"></i> Mathématiques financières</li>
+                            <li><i class="fas fa-check"></i> Droit civil et commercial</li>
+                            <li><i class="fas fa-check"></i> Informatique de bureau</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 2</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Comptabilité générale II</li>
+                            <li><i class="fas fa-check"></i> Statistiques appliquées</li>
+                            <li><i class="fas fa-check"></i> Droit des sociétés</li>
+                            <li><i class="fas fa-check"></i> Gestion des ressources humaines</li>
+                            <li><i class="fas fa-check"></i> Anglais des affaires</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 3</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Comptabilité analytique</li>
+                            <li><i class="fas fa-check"></i> Finance d'entreprise</li>
+                            <li><i class="fas fa-check"></i> Fiscalité</li>
+                            <li><i class="fas fa-check"></i> Marketing fondamental</li>
+                            <li><i class="fas fa-check"></i> Logiciels comptables (SAGE)</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 4</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Contrôle de gestion</li>
+                            <li><i class="fas fa-check"></i> Analyse financière</li>
+                            <li><i class="fas fa-check"></i> Audit comptable</li>
+                            <li><i class="fas fa-check"></i> Gestion budgétaire</li>
+                            <li><i class="fas fa-check"></i> Stage professionnel</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 5</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Comptabilité des sociétés</li>
+                            <li><i class="fas fa-check"></i> Management stratégique</li>
+                            <li><i class="fas fa-check"></i> Évaluation d'entreprise</li>
+                            <li><i class="fas fa-check"></i> Systèmes ERP (SAP/SAGE)</li>
+                            <li><i class="fas fa-check"></i> Entrepreneuriat</li>
+                        </ul>
+                    </div>
+                    <div class="semestre-block">
+                        <h4 class="semestre-block__title"><span>Semestre 6</span></h4>
+                        <ul class="semestre-block__list">
+                            <li><i class="fas fa-check"></i> Projet de fin d'études</li>
+                            <li><i class="fas fa-check"></i> Stage long (4 mois)</li>
+                            <li><i class="fas fa-check"></i> Consolidation des comptes</li>
+                            <li><i class="fas fa-check"></i> Mémoire professionnel</li>
+                            <li><i class="fas fa-check"></i> Préparation à l'emploi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalités d'Admission -->
+    <section class="section admission-section">
+        <div class="container">
+            <div class="admission-grid">
+                <div class="admission-info">
+                    <span class="section__tag">Comment intégrer l'ESIG ?</span>
+                    <h2 class="admission-info__title">Modalités d'Admission</h2>
+                    <p>L'admission à l'ESIG est ouverte à tous les bacheliers motivés. Le processus d'admission évalue vos compétences et votre projet professionnel.</p>
+
+                    <div class="admission-steps">
+                        <div class="admission-step">
+                            <div class="admission-step__num">1</div>
+                            <div>
+                                <h4>Dossier de candidature</h4>
+                                <p>Relevés de notes, diplômes, CV et lettre de motivation</p>
+                            </div>
+                        </div>
+                        <div class="admission-step">
+                            <div class="admission-step__num">2</div>
+                            <div>
+                                <h4>Test d'évaluation</h4>
+                                <p>Évaluation des connaissances générales et logique</p>
+                            </div>
+                        </div>
+                        <div class="admission-step">
+                            <div class="admission-step__num">3</div>
+                            <div>
+                                <h4>Entretien de motivation</h4>
+                                <p>Échange avec le jury d'admission sur votre projet professionnel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="inscriptions.html" class="btn btn--gold">Déposer ma candidature</a>
+                </div>
+
+                <div class="admission-conditions-box">
+                    <h3>Conditions requises</h3>
+                    <ul class="conditions-list">
+                        <li><i class="fas fa-check-circle"></i> Baccalauréat ou équivalent reconnu</li>
+                        <li><i class="fas fa-check-circle"></i> Dossier scolaire complet</li>
+                        <li><i class="fas fa-check-circle"></i> Pièce d'identité valide</li>
+                        <li><i class="fas fa-check-circle"></i> 4 photos d'identité</li>
+                        <li><i class="fas fa-check-circle"></i> Lettre de motivation</li>
+                    </ul>
+
+                    <div class="admission-frais">
+                        <h4>Frais de scolarité</h4>
+                        <div class="frais-row">
+                            <span>Frais d'inscription</span>
+                            <strong>500 000 GNF</strong>
+                        </div>
+                        <div class="frais-row">
+                            <span>Scolarité annuelle</span>
+                            <strong>5 000 000 GNF</strong>
+                        </div>
+                        <a href="inscriptions.html" class="btn btn--outline-dark" style="margin-top: 1rem; display: inline-block;">En savoir plus</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,5 +379,31 @@
     <div id="footer-placeholder"></div>
 
     <script src="js/main.js"></script>
+    <script>
+        // Tabs fonctionnalité
+        const tabs = document.querySelectorAll('.programme-tab');
+        const contents = document.querySelectorAll('.programme-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        function showTab(tabId) {
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            const tab = document.querySelector('[data-tab="' + tabId + '"]');
+            if (tab) tab.classList.add('active');
+            const content = document.getElementById('tab-' + tabId);
+            if (content) {
+                content.classList.add('active');
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
 </body>
 </html>

@@ -15,105 +15,158 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Inscriptions</span>
+            </nav>
             <h1 class="page-header__title">Inscriptions</h1>
-            <p class="page-header__text">Rejoindre l'ESIG, c'est accéder à un parcours académique d'excellence en informatique de gestion</p>
-        </div>
-    </section>
-
-    <!-- Conditions d'admission -->
-    <section class="admission-conditions">
-        <div class="container">
-            <h2 class="admission-conditions__title">Conditions d'admission</h2>
-            <ul class="admission-conditions__list">
-                <li>Baccalauréat ou équivalent</li>
-                <li>Dossier scolaire complet</li>
-                <li>Entretien éventuel</li>
-            </ul>
+            <p class="page-header__subtitle">Rejoindre l'ESIG, c'est choisir l'excellence</p>
         </div>
     </section>
 
     <!-- Frais de scolarité -->
-    <section class="tuition-fees">
+    <section class="section frais-section">
         <div class="container">
-            <h2 class="tuition-fees__title">Frais de scolarité</h2>
-            <table class="tuition-fees__table">
-                <tbody>
-                    <tr>
-                        <td class="tuition-fees__label">Frais d'inscription : 500 000 GNF</td>
-                        <td class="tuition-fees__amount">5 000 000 GNF/an</td>
-                    </tr>
-                    
-                </tbody>
-            </table>
+            <div class="section__header">
+                <span class="section__tag">Transparence</span>
+                <h2 class="section__title">Frais de scolarité</h2>
+                <p class="section__subtitle">Des tarifs accessibles pour une formation d'excellence</p>
+            </div>
+            <div class="frais-cards">
+                <div class="frais-card">
+                    <div class="frais-card__icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="frais-card__title">Inscription</h3>
+                    <div class="frais-card__amount">500 000 <span>GNF</span></div>
+                    <p class="frais-card__desc">Frais d'inscription unique à l'entrée</p>
+                </div>
+                <div class="frais-card frais-card--featured">
+                    <div class="frais-card__badge">Le plus choisi</div>
+                    <div class="frais-card__icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="frais-card__title">Scolarité annuelle</h3>
+                    <div class="frais-card__amount">5 000 000 <span>GNF/an</span></div>
+                    <p class="frais-card__desc">Payable en une ou plusieurs tranches</p>
+                </div>
+                <div class="frais-card">
+                    <div class="frais-card__icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3 class="frais-card__title">Par semestre</h3>
+                    <div class="frais-card__amount">2 500 000 <span>GNF</span></div>
+                    <p class="frais-card__desc">Option paiement semestriel disponible</p>
+                </div>
+            </div>
+            <p class="frais-note"><i class="fas fa-info-circle"></i> Des facilités de paiement sont disponibles sur demande auprès de la direction.</p>
+        </div>
+    </section>
+
+    <!-- Conditions d'admission -->
+    <section class="section conditions-section">
+        <div class="container">
+            <div class="conditions-grid">
+                <div class="conditions-content">
+                    <span class="section__tag">Rejoindre l'ESIG</span>
+                    <h2 class="conditions-content__title">Conditions d'Admission</h2>
+                    <p>L'ESIG accueille des étudiants motivés et ambitieux. Voici les conditions pour intégrer nos programmes :</p>
+                    <ul class="conditions-list">
+                        <li><i class="fas fa-check-circle"></i> Baccalauréat ou diplôme équivalent reconnu</li>
+                        <li><i class="fas fa-check-circle"></i> Dossier scolaire complet (relevés de notes, diplômes)</li>
+                        <li><i class="fas fa-check-circle"></i> Pièce d'identité valide</li>
+                        <li><i class="fas fa-check-circle"></i> 4 photos d'identité récentes</li>
+                        <li><i class="fas fa-check-circle"></i> Lettre de motivation</li>
+                        <li><i class="fas fa-check-circle"></i> Entretien de motivation (si convoqué)</li>
+                    </ul>
+                </div>
+                <div class="conditions-note-box">
+                    <h3><i class="fas fa-calendar-alt"></i> Calendrier 2026</h3>
+                    <div class="calendrier-item">
+                        <span class="calendrier-item__date">Août 2026</span>
+                        <span class="calendrier-item__event">Ouverture des inscriptions</span>
+                    </div>
+                    <div class="calendrier-item">
+                        <span class="calendrier-item__date">Septembre 2026</span>
+                        <span class="calendrier-item__event">Dépôt des dossiers</span>
+                    </div>
+                    <div class="calendrier-item">
+                        <span class="calendrier-item__date">Octobre 2026</span>
+                        <span class="calendrier-item__event">Entretiens d'admission</span>
+                    </div>
+                    <div class="calendrier-item">
+                        <span class="calendrier-item__date">Novembre 2026</span>
+                        <span class="calendrier-item__event">Début des cours</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Inscription Section -->
-    <section class="inscription-section">
+    <section class="section inscription-section">
         <div class="container">
             <div class="inscription-grid">
-                <!-- Steps -->
+
+                <!-- Étapes -->
                 <div class="inscription-steps">
+                    <span class="section__tag">Processus</span>
                     <h2>Étapes d'inscription</h2>
                     <div class="step">
                         <div class="step__number">1</div>
                         <div class="step__content">
-                            <h4 class="step__title">Retrait de dossier</h4>
-                            <p class="step__text">Complétez le formulaire de pré-inscription en ligne avec vos informations personnelles et le choix de votre formation.</p>
+                            <h4 class="step__title">Retrait du dossier</h4>
+                            <p class="step__text">Téléchargez le dossier de candidature ou retirez-le directement au secrétariat de l'ESIG.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step__number">2</div>
                         <div class="step__content">
-                            <h4 class="step__title">Depôt du dossier</h4>
-                            <p class="step__text">Rassemblez les documents nécessaires : diplômes, relevés de notes, pièce d'identité, photos d'identité.</p>
+                            <h4 class="step__title">Constitution du dossier</h4>
+                            <p class="step__text">Rassemblez tous les documents requis : diplômes, relevés de notes, pièce d'identité, photos.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step__number">3</div>
                         <div class="step__content">
-                            <h4 class="step__title">Validation par la direction</h4>
-                            <p class="step__text">Participez à un entretien avec notre commission d'admission pour valider votre candidature.</p>
+                            <h4 class="step__title">Dépôt du dossier</h4>
+                            <p class="step__text">Déposez votre dossier complet au secrétariat ou soumettez-le via ce formulaire en ligne.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step__number">4</div>
                         <div class="step__content">
-                            <h4 class="step__title">Paiement des frais</h4>
-                            <p class="step__text">Une fois admis, confirmez votre inscription en réglant les frais de scolarité.</p>
+                            <h4 class="step__title">Validation par la direction</h4>
+                            <p class="step__text">Votre dossier est étudié. Un entretien peut être organisé si nécessaire.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step__number">5</div>
                         <div class="step__content">
-                            <h4 class="step__title">Confirmation de paiement</h4>
-                            <p class="step__text">Recevez votre carte étudiant et préparez-vous pour la rentrée universitaire.</p>
+                            <h4 class="step__title">Paiement & Confirmation</h4>
+                            <p class="step__text">Une fois admis, procédez au paiement des frais pour confirmer votre place.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Form -->
+                <!-- Formulaire -->
                 <div class="inscription-form-container">
                     <h2>Formulaire de pré-inscription</h2>
+                    <p class="form-intro">Remplissez ce formulaire pour déposer votre candidature en ligne. Notre équipe vous contactera sous 48h.</p>
                     <form id="inscription-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="prenom">Prénom *</label>
-                                <input type="text" id="prenom" name="prenom" required>
+                                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
                             </div>
                             <div class="form-group">
                                 <label for="nom">Nom *</label>
-                                <input type="text" id="nom" name="nom" required>
+                                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
                             </div>
                             <div class="form-group">
                                 <label for="telephone">Téléphone *</label>
-                                <input type="tel" id="telephone" name="telephone" required>
+                                <input type="tel" id="telephone" name="telephone" placeholder="+224 6XX XX XX XX" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -123,12 +176,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="lieu-naissance">Lieu de naissance *</label>
-                                <input type="text" id="lieu-naissance" name="lieu-naissance" required>
+                                <input type="text" id="lieu-naissance" name="lieu-naissance" placeholder="Ville, Pays" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="adresse">Adresse complète *</label>
-                            <input type="text" id="adresse" name="adresse" required>
+                            <input type="text" id="adresse" name="adresse" placeholder="Quartier, Commune, Ville" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -144,23 +197,24 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formation">Formation souhaitée *</label>
+                                <label for="formation">Filière souhaitée *</label>
                                 <select id="formation" name="formation" required>
                                     <option value="">Sélectionnez...</option>
-                                    <option value="dev-web">Licence Développement Web & Mobile</option>
-                                    <option value="systemes">Licence Systèmes & Réseaux</option>
-                                    <option value="cyber">Master Cybersécurité</option>
-                                    <option value="management">Licence Management des Entreprises</option>
-                                    <option value="finance">Master Finance et Comptabilité</option>
-                                    <option value="msi">Master Management des SI</option>
+                                    <option value="info-gestion">Informatique de Gestion</option>
+                                    <option value="dev-bdd">Développement & Bases de Données</option>
+                                    <option value="compta-gestion">Comptabilité & Gestion</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="motivation">Lettre de motivation (facultatif)</label>
-                            <textarea id="motivation" name="motivation" placeholder="Décrivez vos motivations pour rejoindre l'ESIG..."></textarea>
+                            <label for="motivation">Lettre de motivation <span style="font-weight:400; color: var(--text-light)">(facultatif)</span></label>
+                            <textarea id="motivation" name="motivation" rows="5" placeholder="Décrivez vos motivations pour rejoindre l'ESIG et votre projet professionnel..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn--primary" style="width: 100%;">
+                        <div class="form-group form-group--checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">J'accepte que mes données soient traitées conformément à la politique de confidentialité de l'ESIG.</label>
+                        </div>
+                        <button type="submit" class="btn btn--gold btn--full">
                             <i class="fas fa-paper-plane"></i> Envoyer ma candidature
                         </button>
                     </form>
