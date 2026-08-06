@@ -82,7 +82,7 @@ html {
 body {
     font-family: var(--font-family);
     font-size: var(--font-size-base);
-    line-height: 1.6;
+    line-height: 1.75;
     color: var(--text-color);
     background-color: var(--white);
     overflow-x: hidden;
@@ -109,6 +109,17 @@ button {
     cursor: pointer;
     border: none;
     outline: none;
+}
+
+/* Focus visible pour accessibilité clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+    border-radius: var(--border-radius-sm);
 }
 
 /* Amélioration du touch sur mobile */
@@ -184,13 +195,13 @@ button {
 .nav__link::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: -2px;
+    left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: 2px;
+    transition: width 0.3s ease;
 }
 
 .nav__link:hover,
@@ -200,7 +211,7 @@ button {
 
 .nav__link:hover::after,
 .nav__link.active::after {
-    width: 80%;
+    width: 100%;
 }
 
 .nav__toggle,
@@ -221,8 +232,10 @@ button {
     border-radius: var(--border-radius);
     font-weight: 600;
     font-size: var(--font-size-base);
+    letter-spacing: 0.02em;
     transition: var(--transition);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn--primary {
@@ -233,7 +246,7 @@ button {
 
 .btn--primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.35);
 }
 
 .btn--secondary {
@@ -270,17 +283,18 @@ button {
 }
 
 .btn--gold {
-    background: #CBA135;
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
     color: var(--white);
     border: none;
     padding: var(--spacing-md) var(--spacing-2xl);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
+    box-shadow: 0 4px 15px rgba(203, 161, 53, 0.3);
 }
 
 .btn--gold:hover {
-    background: #a8862c;
+    background: linear-gradient(135deg, var(--secondary-dark), #8a6e22);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 6px 20px rgba(203, 161, 53, 0.45);
 }
 
 .btn--white-outline {
@@ -506,8 +520,17 @@ button {
 
 /* ===== FORMATIONS PREVIEW GOLD ===== */
 .formations-preview-gold {
-    background: #CBA135;
+    background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary-color) 60%, var(--accent-light) 100%);
     padding: var(--spacing-3xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.formations-preview-gold::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .formations-gold__title {
@@ -516,30 +539,64 @@ button {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
     font-weight: 700;
+    position: relative;
 }
 
 .formations-gold__cards {
     display: flex;
     justify-content: center;
     gap: var(--spacing-xl);
+    position: relative;
+    flex-wrap: wrap;
 }
 
 .formation-gold-card {
-    background: rgba(255, 255, 255, 0.2);
-    border: 2px solid var(--white);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     color: var(--white);
-    padding: var(--spacing-xl) var(--spacing-2xl);
-    border-radius: var(--border-radius);
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
     text-align: center;
     font-weight: 600;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     transition: var(--transition);
-    min-width: 250px;
+    min-width: 220px;
+    flex: 1;
+    max-width: 300px;
+    backdrop-filter: blur(4px);
+    cursor: pointer;
 }
 
 .formation-gold-card:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--white);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.formation-gold-card__icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.formation-gold-card:hover .formation-gold-card__icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.formation-gold-card span {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.formation-gold-card p {
+    font-size: var(--font-size-sm);
+    opacity: 0.85;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* ===== NEWS PREVIEW NEW (Vie ESIG + Actualités) ===== */
@@ -2044,12 +2101,20 @@ button {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: var(--spacing-md);
-    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border-color);
     border-radius: var(--border-radius);
     font-family: inherit;
     font-size: var(--font-size-base);
+    background: var(--white);
+    color: var(--text-color);
     transition: var(--transition);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #b0b8c4;
 }
 
 .form-group input:focus,
@@ -2057,7 +2122,8 @@ button {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+    background: #f7f9fc;
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.08);
 }
 
 .form-group textarea {
