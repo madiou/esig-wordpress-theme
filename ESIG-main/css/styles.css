@@ -315,7 +315,7 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #003366;
+    background: var(--primary-color);
     margin-top: 0;
     padding-top: var(--header-height);
 }
@@ -404,7 +404,7 @@ textarea:focus-visible {
 .section__line {
     width: 80px;
     height: 3px;
-    background-color: #CBA135;
+    background-color: var(--secondary-color);
     margin: var(--spacing-lg) auto 0;
     overflow: visible;
 }
@@ -471,16 +471,23 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #CBA135;
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
     border-radius: var(--border-radius-full);
     font-size: var(--font-size-2xl);
     color: var(--white);
+    box-shadow: 0 4px 15px rgba(203, 161, 53, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item:hover .value-item__icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(203, 161, 53, 0.45);
 }
 
 .value-item__text {
     display: block;
     font-weight: 600;
-    color: #333333;
+    color: var(--text-color);
     font-size: var(--font-size-base);
 }
 
@@ -491,7 +498,7 @@ textarea:focus-visible {
 
 .formations-row__title {
     font-size: var(--font-size-2xl);
-    color: #CBA135;
+    color: var(--secondary-color);
     margin-bottom: var(--spacing-lg);
     font-weight: 700;
 }
@@ -503,7 +510,7 @@ textarea:focus-visible {
 
 .formation-mini-card {
     flex: 1;
-    background: #CBA135;
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
     color: var(--white);
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
@@ -511,11 +518,13 @@ textarea:focus-visible {
     font-weight: 600;
     font-size: var(--font-size-sm);
     transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(203, 161, 53, 0.25);
 }
 
 .formation-mini-card:hover {
-    background: #a8862c;
+    background: linear-gradient(135deg, var(--secondary-dark), #8a6e22);
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(203, 161, 53, 0.35);
 }
 
 /* ===== FORMATIONS PREVIEW GOLD ===== */
@@ -634,12 +643,38 @@ textarea:focus-visible {
 
 /* Partie Droite - Actualités */
 .actualites-box {
-    background: #003366;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     padding: var(--spacing-3xl);
     color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.actualites-box::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.actualites-box::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(203, 161, 53, 0.15);
+    pointer-events: none;
 }
 
 .actualites-box__title {
@@ -908,8 +943,8 @@ textarea:focus-visible {
 
 /* Footer Simple */
 .footer-simple {
-    background-color: #003366;
-    color: #FFFFFF;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: var(--spacing-xl) 0;
 }
 
@@ -1058,12 +1093,12 @@ textarea:focus-visible {
 
 /* Page Header Light Variant */
 .page-header--light {
-    background: #FFFFFF;
-    color: #003366;
+    background: var(--white);
+    color: var(--primary-color);
 }
 
 .page-header--light .page-header__title {
-    color: #003366;
+    color: var(--primary-color);
 }
 
 /* Mission Vision Section */
@@ -1089,12 +1124,12 @@ textarea:focus-visible {
 
 .mission-vision-block__icon i {
     font-size: 3rem;
-    color: #CBA135;
+    color: var(--secondary-color);
 }
 
 .mission-vision-block__title {
     font-size: 1.5rem;
-    color: #003366;
+    color: var(--primary-color);
     margin-bottom: var(--spacing-md);
     font-weight: 600;
 }
@@ -1113,7 +1148,7 @@ textarea:focus-visible {
 
 .historique-section__title {
     font-size: 2rem;
-    color: #003366;
+    color: var(--primary-color);
     margin-bottom: var(--spacing-lg);
     font-weight: 600;
 }
@@ -1339,7 +1374,7 @@ textarea:focus-visible {
 .formation-circle {
     width: 100px;
     height: 100px;
-    background-color: #003366;
+    background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1350,24 +1385,24 @@ textarea:focus-visible {
 
 .formation-circle:hover {
     transform: scale(1.1);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.3);
 }
 
 .formation-circle i {
     font-size: 2.5rem;
-    color: #CBA135;
+    color: var(--secondary-color);
 }
 
 .formation-circle__label {
     font-weight: 600;
-    color: #003366;
+    color: var(--primary-color);
     font-size: var(--font-size-base);
 }
 
 .formation-circle__title {
     font-size: var(--font-size-lg);
     font-weight: 600;
-    color: #003366;
+    color: var(--primary-color);
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);
 }
@@ -1394,7 +1429,7 @@ textarea:focus-visible {
 
 .formations-info__title {
     font-size: var(--font-size-xl);
-    color: #003366;
+    color: var(--primary-color);
     margin-bottom: var(--spacing-md);
     font-weight: 600;
 }
@@ -1423,7 +1458,7 @@ textarea:focus-visible {
 .semestre-table {
     width: 100%;
     border-collapse: collapse;
-    border: 2px solid #CBA135;
+    border: 2px solid var(--secondary-color);
     border-radius: var(--border-radius);
     overflow: hidden;
     text-align: center;
@@ -1431,19 +1466,19 @@ textarea:focus-visible {
 
 .semestre-table th {
     background-color: transparent;
-    color: #003366;
+    color: var(--primary-color);
     padding: var(--spacing-lg);
     font-weight: 600;
     font-size: var(--font-size-lg);
     text-align: center;
-    border-bottom: 2px solid #CBA135;
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .semestre-table td {
     padding: var(--spacing-md) var(--spacing-lg);
-    border-bottom: 1px solid #CBA135;
+    border-bottom: 1px solid rgba(203, 161, 53, 0.3);
     background-color: transparent;
-    color: #003366;
+    color: var(--primary-color);
 }
 
 .semestre-table tbody tr:last-child td {
